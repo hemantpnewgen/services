@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment_4</title>
+	<script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		var mod=angular.module("App",[]);
+		mod.controller("ctrl",function($scope,fact)
+		{
+			$scope.employees=fact.view();
+			$scope.add_employee=function()
+			{
+				fact.add_update($scope.new);
+				$scope.new={};
+			}
+		});
+		mod.service("fact",function(){
+				var size=0;
+				var employee=[{									//Employee Object
+					id:"",
+					name:"",
+					age:"",
+					salary:""
+			}];
+			employee.add_update=function(curr_employee){		//Add function for employee
+					employee.id=size++;
+					employee.push(curr_employee);
+			}		
+			employee.view=function(){							//View all employees
+				return employee;
+			}
+			return employee;
+		});
+	</script>
+</head>
+<body ng-app="App" ng-controller="ctrl" class="container">
+<form>
+	<div>
+		<div>
+			Name: <input type="text" ng-model="new.name" placeholder="Employee Name" required><br><br>
+			Age: <input type="number" ng-model="new.age" placeholder="Employee Age" required><br><br>
+			Salary: <input type="number" ng-model="new.salary" placeholder="Employee Salary" required><br><br>
+			<input type="button" value="Save" ng-click="add_employee()"/><br><br><br>
+		</div>
+	</div>
+	<div>
+		<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Salary</th>
+						
+					</tr>
+				</thead><br>
+				<tbody>
+					<tr ng-repeat="item in employees">
+						<td>{{item.name}}</td>
+						<td>{{item.age}}</td>
+						<td>{{item.salary}}</td>
+					   
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</form>
+</body>
+</html>

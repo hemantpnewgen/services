@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Assignment_2</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script type="text/javascript" src=https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js></script>
+	<script type="text/javascript">
+		var mod=angular.module("app",[]);
+    mod.constant("Pi","3.14");
+		mod.controller("ctrl",function($scope,Pi,calcArea){
+				$scope.number=0;
+    	        $scope.circle = function(){
+               		$scope.result = calcArea.circle($scope.number);
+            	}
+		});
+		mod.factory('mult', function(){
+            var factory = {};
+            factory.product = function(val1, val2) {
+               return val1 * val2;
+            }
+            return factory;
+         });
+		mod.service('calcArea', function(mult,Pi){
+            this.circle = function(a) {
+
+               return ( mult.product(Pi,( mult.product(a,a) )) );
+            }
+         });
+	</script>
+</head>
+<body ng-app="app" ng-controller="ctrl">
+<div class="container">
+          <h2>Area of Circle</h2>
+         <p>Enter a number: <input type = "number" name="val" ng-model = "number"></p>
+         <button ng-click = "circle()"> Calculate </button><br>
+         <p>Area of Circle: {{result}}</p>
+      </div>
+</body>
+</html>

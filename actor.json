@@ -1,0 +1,52 @@
+[
+  {
+    "firstname": "Amir",
+    "lastname": "Khan",
+    "contact": "9282727372"
+  },
+  {
+    "firstname": "Salman",
+    "lastname": "Khan",
+    "contact": "9994975593"
+  },
+  {
+    "firstname": "Shahrukh",
+    "lastname": "Khan",
+    "contact": "9929121286"
+  },
+  {
+    "firstname": "Saif",
+    "lastname": "Ali Khan",
+    "contact": "9229986754"
+  },
+  {
+    "firstname": "Arbaz",
+    "lastname": "Khan",
+    "contact": "9999913254"
+  },
+  {
+    "firstname": "Farhan",
+    "lastname": "Akhtar",
+    "contact": "9992986952"
+  },
+  {
+    "firstname": "Hritik",
+    "lastname": "Roshan",
+    "contact": "9992968000"
+  },
+  {
+    "firstname": "Akshay",
+    "lastname": "Kumar",
+    "contact": "9913068161"
+  },
+  {
+    "firstname": "Ranveer",
+    "lastname": "Singh",
+    "contact": "9977668670"
+  },
+  {
+    "firstname": "Ranbeer",
+    "lastname": "Kapoor",
+    "contact": "9941343201"
+  }
+]
